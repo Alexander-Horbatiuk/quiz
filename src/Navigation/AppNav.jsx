@@ -6,6 +6,7 @@ import { Gender } from '../components/Steps/Gender';
 import { Books } from '../components/Steps/Books';
 import { Hobbies } from '../components/Steps/Hobbies';
 import { Loader } from '../components/Loader';
+import { Email } from '../components/Steps/Email';
 
 export const AppNav = () => {
     return (
@@ -17,6 +18,7 @@ export const AppNav = () => {
                 <Route path="/books" element={<Books />} />
                 <Route path="/hobbies" element={<Hobbies />} />
                 <Route path="/loader" element={<Loader />} />
+                <Route path="/email" element={<Email />} />
             </Routes>
         </div>
     );

@@ -14,28 +14,22 @@ import {
 export const AppContext = createContext(null);
 
 export const ContextProvider = ({ children }) => {
+    const { i18n, t } = useTranslation();
+    const navigate = useNavigate();
     const [user, setUser] = useState('');
     const [currentStep, setCurrentStep] = useState(() => {
         const savedStep = localStorage.getItem('currentStep');
         return savedStep ? parseInt(savedStep, 10) : 0;
     });
-    const { i18n, t } = useTranslation();
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        navigate(steps[currentStep]);
-        localStorage.setItem('currentStep', currentStep);
-    }, [currentStep, navigate]);
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     };
 
-    const years = t('StepAgeYears');
-    const ages = optionsAge(years);
-    const gender = optionsGender(t);
-    const books = optionsBooks(t);
-    const hobies = optionsHobbies(t);
+    useEffect(() => {
+        navigate(steps[currentStep]);
+        localStorage.setItem('currentStep', currentStep);
+    }, [currentStep, navigate]);
 
     const nextStep = () => {
         if (currentStep < steps.length - 1) {
@@ -48,6 +42,12 @@ export const ContextProvider = ({ children }) => {
             setCurrentStep(currentStep - 1);
         }
     };
+
+    const years = t('StepAgeYears');
+    const ages = optionsAge(years);
+    const gender = optionsGender(t);
+    const books = optionsBooks(t);
+    const hobies = optionsHobbies(t);
 
     const model = {
         changeLanguage,

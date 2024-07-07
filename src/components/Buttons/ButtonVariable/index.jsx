@@ -11,6 +11,7 @@ export const ButtonVariable = ({
     maxWidth,
     flexDirection,
     sizeEnoji,
+    btnRadius,
     sizeLabel,
     ...props
 }) => {
@@ -47,6 +48,7 @@ export const ButtonVariable = ({
             hideRadio={!stateRadio}
             onChange={handleCheckboxChange}
             sizeEnoji={sizeEnoji}
+            btnRadius={btnRadius}
             sizeLabel={sizeLabel}
             {...props}
         />

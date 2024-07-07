@@ -19,7 +19,7 @@
     "Loader": "Sammlungen für Sie finden...",
     "StepEmailSubTittle": "Geben Sie Ihre E-Mail ein, um vollen Zugang zu erhalten",
     "PlashoalderEmail": "Ihre E-Mail",
-    "PrivacyPolitic": "Indem ich fortfahre, stimme ich den Datenschutzbestimmungen und Nutzungsbedingungen zu.",
+    "PrivacyPolitic": "Indem ich fortfahre, stimme ich den <privacyPolicyLink>Datenschutzbestimmungen</privacyPolicyLink> und <termsOfUseLink>Nutzungsbedingungen</termsOfUseLink> zu.",
     "ThankYou": "Danke",
     "LastStepSubTitle": "für Ihre Unterstützung und das Ausfüllen des Quiz",
     "DownloadCvs": "Meine Antworten herunterladen",
@@ -31,5 +31,6 @@
     "Romance": "Romantik",
     "YoungAdult": "Junge Erwachsene",
     "BadBoy": "Böser Junge",
-    "Billionaire": "Milliardär"
+    "Billionaire": "Milliardär",
+    "StepEmailTittle": "Email"
 }

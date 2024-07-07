@@ -1,45 +1,53 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../../Context';
-import { Title, SubTitle } from '../../../GlobalStyles';
+import { Title, SubTitle, Wrapper } from '../../../GlobalStyles';
+import { ButtonToGo } from '../../Buttons/ButtonGoTo';
 import { ButtonVariable } from '../../Buttons/ButtonVariable';
 
 export const Hobbies = () => {
     const { nextStep, hobies, t } = useContext(AppContext);
 
-    const [selectedGender, setSelectedGender] = useState(
-        localStorage.getItem('books') || []
-    );
-
-    const handleChange = (value) => {
-        setSelectedGender(value);
-        localStorage.setItem('books', value);
-    };
+    const [selectedValue, setSelectedValue] = useState([]);
 
     useEffect(() => {
-        const storedValue = localStorage.getItem('books');
+        const storedValue = localStorage.getItem('hobbies');
         if (storedValue) {
-            setSelectedGender(storedValue);
+            setSelectedValue(storedValue.split(','));
+        } else {
+            setSelectedValue([]);
         }
     }, []);
 
+    const handleChange = (value) => {
+        setSelectedValue(value);
+        localStorage.setItem('hobbies', value.join(','));
+    };
+
     return (
-        <div>
+        <Wrapper>
             <Title>{t('StepHobbiesTitle')}</Title>
             <SubTitle>{t('StepHobbiesSubTitle')}</SubTitle>
 
-            <ButtonVariable
-                flexDirection={'initial'}
-                maxWidth={'88px'}
-                sizeLabel={'13px'}
-                options={hobies}
-                value={selectedGender}
-                onChange={handleChange}
-                stateRadio={false}
-                maxSelection={3}
-                sizeEnoji={'25px'}
-            />
+            <>
+                <ButtonVariable
+                    onChange={handleChange}
+                    value={selectedValue}
+                    options={hobies}
+                    maxSelection={3}
+                    flexDirection={'initial'}
+                    sizeEnoji={'25px'}
+                    btnRadius={'50px'}
+                    sizeLabel={'13px'}
+                    maxWidth={'88px'}
+                />
 
-            <button onClick={nextStep}>{t('ButtonNext')}</button>
-        </div>
+                <ButtonToGo
+                    disabled={selectedValue.length !== 3}
+                    onClick={nextStep}
+                >
+                    {t('ButtonNext')}
+                </ButtonToGo>
+            </>
+        </Wrapper>
     );
 };

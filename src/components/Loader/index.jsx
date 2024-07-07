@@ -2,10 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AppContext } from '../../Context';
 import styled from 'styled-components';
 import { ButtonToGo } from '../Buttons/ButtonGoTo';
+import { Wrapper } from '../../GlobalStyles';
 
 export const Loader = () => {
     const [percentage, setPercentage] = useState(0);
-    const { t, prevStep } = useContext(AppContext);
+    const { t, nextStep } = useContext(AppContext);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,17 +23,16 @@ export const Loader = () => {
     }, []);
 
     return (
-        <>
+        <Wrapper>
             <LoaderWrapper
-                // className="loader"
                 style={{ '--percentage': `${percentage}%` }}
                 data-value={percentage}
             >
                 {percentage}%
             </LoaderWrapper>
             <span>{t('Loader')}</span>
-            <ButtonToGo onClick={prevStep}>next</ButtonToGo>
-        </>
+            <ButtonToGo onClick={nextStep}>nextStep</ButtonToGo>
+        </Wrapper>
     );
 };
 

@@ -66,7 +66,7 @@ export const BtnToGo = styled.button`
     }
 
     &:disabled {
-        background: #007bff;
+        background: #e4229c;
         opacity: 0.65;
         cursor: not-allowed;
     }
@@ -78,6 +78,8 @@ const RadioButtonContainer = styled.div`
     gap: 10px;
     width: 100%;
     flex-direction: ${(props) => props.flexDirection || 'column'};
+
+    flex-wrap: wrap;
 `;
 
 const RadioButtonWrapper = styled.label`
@@ -86,12 +88,12 @@ const RadioButtonWrapper = styled.label`
     display: flex;
     align-items: center;
     flex-direction: ${(props) => (props.emoji ? 'column' : 'initial')};
-    background: ${(props) => (props.checked ? '#e4229b69' : '#36173D')};
+    background: ${(props) =>
+        props.checked ? 'rgba(228, 34, 155, 0.2)' : '#36173D'};
     padding: 21px 20px;
     box-sizing: border-box;
     text-align: start;
-    border-radius: 16px;
-    /* border-radius: 50px; */
+    border-radius: ${(props) => props.btnRadius || '16px'};
     color: white;
     cursor: pointer;
     font-size: ${(props) => props.sizeLabel || '17px'};
@@ -160,6 +162,7 @@ const RadioButton = ({
     hideRadio,
     maxWidth,
     sizeLabel,
+    btnRadius,
     emoji,
     flexDirection,
     sizeEnoji
@@ -167,6 +170,7 @@ const RadioButton = ({
     <RadioButtonWrapper
         maxWidth={maxWidth}
         sizeLabel={sizeLabel}
+        btnRadius={btnRadius}
         checked={checked}
         hideRadio={hideRadio}
         emoji={emoji}
@@ -186,23 +190,27 @@ export const RadioButtonGroup = ({
     hideRadio,
     maxWidth,
     sizeLabel,
+    btnRadius,
     sizeEnoji,
     flexDirection
 }) => (
     <RadioButtonContainer flexDirection={flexDirection}>
         {options.map((option, index) => (
-            <RadioButton
-                flexDirection={flexDirection}
-                maxWidth={maxWidth}
-                sizeLabel={sizeLabel}
-                key={index}
-                label={option.label}
-                emoji={option.emoji}
-                sizeEnoji={sizeEnoji}
-                checked={selectedValue.includes(option.value)}
-                onChange={() => onChange(option.value)}
-                hideRadio={hideRadio}
-            />
+            <>
+                <RadioButton
+                    flexDirection={flexDirection}
+                    maxWidth={maxWidth}
+                    sizeLabel={sizeLabel}
+                    btnRadius={btnRadius}
+                    key={index}
+                    label={option.label}
+                    emoji={option.emoji}
+                    sizeEnoji={sizeEnoji}
+                    checked={selectedValue.includes(option.value)}
+                    onChange={() => onChange(option.value)}
+                    hideRadio={hideRadio}
+                />
+            </>
         ))}
     </RadioButtonContainer>
 );

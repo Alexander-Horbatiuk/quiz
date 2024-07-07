@@ -4,7 +4,8 @@ export const steps = [
     '/age',
     '/books',
     '/hobbies',
-    '/loader'
+    '/loader',
+    '/email'
 ];
 
 export const optionLanguages = [

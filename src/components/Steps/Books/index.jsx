@@ -7,25 +7,20 @@ import { ButtonVariable } from '../../Buttons/ButtonVariable';
 export const Books = () => {
     const { nextStep, books, t } = useContext(AppContext);
 
-    const [selectedValue, setSelectedValue] = useState(
-        localStorage.getItem('books') || ''
-    );
+    const [selectedValue, setSelectedValue] = useState([]);
 
     useEffect(() => {
         const storedValue = localStorage.getItem('books');
         if (storedValue) {
-            setSelectedValue(storedValue);
+            setSelectedValue(storedValue.split(','));
+        } else {
+            setSelectedValue([]);
         }
     }, []);
 
     const handleChange = (value) => {
         setSelectedValue(value);
-        localStorage.setItem('books', value);
-    };
-
-    const handleRadioClick = (value) => {
-        setSelectedValue(value); // Обновляем выбранное значение
-        localStorage.setItem('books', value); // Сохраняем в localStorage
+        localStorage.setItem('books', value.join(','));
     };
 
     return (
@@ -37,14 +32,17 @@ export const Books = () => {
                 <ButtonVariable
                     options={books}
                     value={selectedValue}
-                    onChange={handleChange} // Передаем handleSelectChange как onChange
+                    onChange={handleChange}
                     stateRadio={true} // Указываем, что это радиокнопки
-                    onClick={handleRadioClick}
                     maxSelection={2}
                 />
+                <ButtonToGo
+                    disabled={selectedValue.length < 2}
+                    onClick={nextStep}
+                >
+                    {t('ButtonNext')}
+                </ButtonToGo>
             </Wrapper>
-
-            <ButtonToGo onClick={nextStep}>{t('ButtonNext')}</ButtonToGo>
         </div>
     );
 };
