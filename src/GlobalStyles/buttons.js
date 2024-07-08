@@ -74,7 +74,6 @@ export const BtnToGo = styled.button`
 `;
 
 const RadioButtonContainer = styled.div`
-    /* max-width: 335px; */
     display: flex;
     gap: 10px;
     width: 100%;

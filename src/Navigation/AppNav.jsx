@@ -2,14 +2,14 @@ import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyles';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { Language } from '../components/Steps/Language';
-import { Age } from '../components/Steps/Age';
-import { Gender } from '../components/Steps/Gender';
-import { Books } from '../components/Steps/Books';
-import { Hobbies } from '../components/Steps/Hobbies';
-import { Loader } from '../components/Steps/Loader';
-import { Email } from '../components/Steps/Email';
-import { Congratulations } from '../components/Steps/Congratulations';
+import { Language } from '../Components/Steps/Language';
+import { Age } from '../Components/Steps/Age';
+import { Gender } from '../Components/Steps/Gender';
+import { Books } from '../Components/Steps/Books';
+import { Hobbies } from '../Components/Steps/Hobbies';
+import { Loader } from '../Components/Steps/Loader';
+import { Email } from '../Components/Steps/Email';
+import { Congratulations } from '../Components/Steps/Congratulations';
 
 export const AppNav = () => {
     const location = useLocation();

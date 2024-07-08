@@ -53,7 +53,7 @@ export const ContextProvider = ({ children }) => {
 
     const getStoredData = () => {
         return [
-            { order: 1, title: t('StepOneTitle'), key: 'single-select' },
+            { order: 1, title: t('StepOneTitle'), key: 'language' },
             { order: 2, title: t('StepGenderTitle'), key: 'gender' },
             { order: 3, title: t('StepAgeTitle'), key: 'age' },
             { order: 4, title: t('StepBookTitle'), key: 'books' },

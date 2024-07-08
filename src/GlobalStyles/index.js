@@ -94,7 +94,6 @@ export const SubTitle = styled.span`
 `;
 
 export const Form = styled.form`
-    /* max-width: 335px; */
     width: 335px;
     display: flex;
     gap: 41px;
