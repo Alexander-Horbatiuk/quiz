@@ -1,4 +1,49 @@
-import { styled } from 'styled-components';
+import { styled, createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  .fade-enter {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fade-enter-active {
+      opacity: 1;
+      transition: opacity 300ms ;
+    }
+
+    .fade-exit {
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fade-exit-active {
+      opacity: 0;
+      transition: opacity 700ms ;
+    }
+`;
+
+export const AppDiv = styled.div`
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 550px;
+`;
+
+export const AppContent = styled.div`
+    max-width: 335px;
+    width: 100%;
+    position: relative;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    height: 100%;
+`;
 
 export const Wrapper = styled.div`
     display: flex;

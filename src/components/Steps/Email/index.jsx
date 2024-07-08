@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../../Context';
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans } from 'react-i18next';
 import { ButtonToGo } from '../../Buttons/ButtonGoTo';
 import {
     Wrapper,
@@ -11,7 +11,6 @@ import {
     PrivacyPoliticStyle,
     LinkStyle
 } from '../../../GlobalStyles';
-import { styled } from 'styled-components';
 
 export const Email = (borderColorValidate) => {
     const { nextStep, t } = useContext(AppContext);

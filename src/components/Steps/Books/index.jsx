@@ -24,25 +24,19 @@ export const Books = () => {
     };
 
     return (
-        <div>
+        <Wrapper>
             <Title>{t('StepBookTitle')}</Title>
 
-            <Wrapper>
-                <Title>{t('StepAgeTitle')}</Title>
-                <ButtonVariable
-                    options={books}
-                    value={selectedValue}
-                    onChange={handleChange}
-                    stateRadio={true} // Указываем, что это радиокнопки
-                    maxSelection={2}
-                />
-                <ButtonToGo
-                    disabled={selectedValue.length < 2}
-                    onClick={nextStep}
-                >
-                    {t('ButtonNext')}
-                </ButtonToGo>
-            </Wrapper>
-        </div>
+            <ButtonVariable
+                options={books}
+                value={selectedValue}
+                onChange={handleChange}
+                stateRadio={true} // Указываем, что это радиокнопки
+                maxSelection={2}
+            />
+            <ButtonToGo disabled={selectedValue.length < 2} onClick={nextStep}>
+                {t('ButtonNext')}
+            </ButtonToGo>
+        </Wrapper>
     );
 };

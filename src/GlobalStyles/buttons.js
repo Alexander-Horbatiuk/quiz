@@ -8,8 +8,8 @@ export const BtnGoBack = styled.button`
     background: transparent;
     cursor: pointer;
     position: absolute;
-    left: 30px;
-    top: 10px;
+    left: 0;
+    top: 0;
     transition: 0.5s;
 
     &::before,
@@ -73,13 +73,15 @@ export const BtnToGo = styled.button`
 `;
 
 const RadioButtonContainer = styled.div`
-    max-width: 335px;
+    /* max-width: 335px; */
     display: flex;
+
     gap: 10px;
     width: 100%;
     flex-direction: ${(props) => props.flexDirection || 'column'};
-
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
 `;
 
 const RadioButtonWrapper = styled.label`

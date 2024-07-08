@@ -40,7 +40,7 @@ const NumStep = styled.span`
 `;
 
 const ProgressBarContainer = styled.div`
-    width: 300px;
+    width: 335px;
     height: 4px;
     background: #d3d3d3;
     border-radius: 5px;

@@ -13,7 +13,7 @@ export const Language = () => {
     const handleChange = (language) => {
         setSelectedLanguages(language); // Обновляем выбранный язык
         changeLanguage(language); // Вызываем функцию смены языка
-        nextStep(); // Вызываем функцию перехода на следующий шаг
+        nextStep();
 
         localStorage.setItem('single-select', language);
     };

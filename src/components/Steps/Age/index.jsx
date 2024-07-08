@@ -10,17 +10,14 @@ export const Age = () => {
     );
 
     useEffect(() => {
-        // Проверяем localStorage при загрузке компонента
         const storedValue = localStorage.getItem('age');
         if (storedValue) {
             setSelectedValue(storedValue);
         }
     }, []);
     const handleChange = (value) => {
-        // Обновляем выбранное значение
         setSelectedValue(value);
         localStorage.setItem('age', value);
-        // Всегда вызываем nextStep
         nextStep();
     };
 
