@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { AppContext } from '../../Context';
+import { AppContext } from '../../../Context';
 import styled from 'styled-components';
-import { ButtonToGo } from '../Buttons/ButtonGoTo';
-import { Wrapper } from '../../GlobalStyles';
+import { Wrapper } from '../../../GlobalStyles';
 
 export const Loader = () => {
     const [percentage, setPercentage] = useState(0);
@@ -19,8 +18,15 @@ export const Loader = () => {
             });
         }, 50); // 5 секунд / 100 шагов = 50 мс на шаг
 
-        return () => clearInterval(interval);
-    }, []);
+        const timeout = setTimeout(() => {
+            nextStep();
+        }, 5000);
+
+        return () => {
+            clearInterval(interval);
+            clearTimeout(timeout);
+        };
+    }, [nextStep]);
 
     return (
         <Wrapper>
@@ -31,7 +37,6 @@ export const Loader = () => {
                 {percentage}%
             </LoaderWrapper>
             <span>{t('Loader')}</span>
-            <ButtonToGo onClick={nextStep}>nextStep</ButtonToGo>
         </Wrapper>
     );
 };

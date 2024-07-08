@@ -5,8 +5,16 @@ import { ButtonToGo } from '../../Buttons/ButtonGoTo';
 import { ButtonVariable } from '../../Buttons/ButtonVariable';
 
 export const Hobbies = () => {
-    const { nextStep, hobies, t } = useContext(AppContext);
-
+    const {
+        t,
+        years,
+        nextStep,
+        storedAge,
+        hobiesYoung,
+        hobiesMature,
+        hobbiesElderly,
+        hobbiesOld
+    } = useContext(AppContext);
     const [selectedValue, setSelectedValue] = useState([]);
 
     useEffect(() => {
@@ -23,6 +31,21 @@ export const Hobbies = () => {
         localStorage.setItem('hobbies', value.join(','));
     };
 
+    const getTopics = () => {
+        switch (storedAge) {
+            case `18-29 ${years}`:
+                return hobiesYoung;
+            case `30-39 ${years}`:
+                return hobiesMature;
+            case `40-49 ${years}`:
+                return hobbiesElderly;
+            case '50+':
+                return hobbiesOld;
+            default:
+                return hobiesYoung;
+        }
+    };
+
     return (
         <Wrapper>
             <Title>{t('StepHobbiesTitle')}</Title>
@@ -32,7 +55,7 @@ export const Hobbies = () => {
                 <ButtonVariable
                     onChange={handleChange}
                     value={selectedValue}
-                    options={hobies}
+                    options={getTopics()}
                     maxSelection={3}
                     flexDirection={'initial'}
                     sizeEnoji={'25px'}

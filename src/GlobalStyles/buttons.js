@@ -56,6 +56,7 @@ export const BtnToGo = styled.button`
     box-sizing: border-box;
     font-weight: 800;
     transition: 0.5s;
+    margin-top: auto;
 
     &:hover {
         background: #ce1c8cdb;
@@ -75,19 +76,19 @@ export const BtnToGo = styled.button`
 const RadioButtonContainer = styled.div`
     /* max-width: 335px; */
     display: flex;
-
     gap: 10px;
     width: 100%;
     flex-direction: ${(props) => props.flexDirection || 'column'};
-    /* flex-wrap: wrap; */
+    ${(props) => (props.maxWidth === '88px' ? 'flex-wrap: wrap;' : null)}
     align-items: center;
     justify-content: center;
 `;
 
 const RadioButtonWrapper = styled.label`
     max-width: ${(props) => props.maxWidth || '335px'};
-    width: 100%;
+    ${(props) => (props.maxWidth === '88px' ? 'width: 88px;' : 'width: 100%;')}
     display: flex;
+    ${(props) => (props.maxWidth === '88px' ? 'height: 88px;' : null)}
     align-items: center;
     flex-direction: ${(props) => (props.emoji ? 'column' : 'initial')};
     background: ${(props) =>
@@ -196,7 +197,7 @@ export const RadioButtonGroup = ({
     sizeEnoji,
     flexDirection
 }) => (
-    <RadioButtonContainer flexDirection={flexDirection}>
+    <RadioButtonContainer maxWidth={maxWidth} flexDirection={flexDirection}>
         {options.map((option, index) => (
             <>
                 <RadioButton
@@ -216,3 +217,28 @@ export const RadioButtonGroup = ({
         ))}
     </RadioButtonContainer>
 );
+
+export const SaveCSV = styled.button`
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: auto;
+
+    &:hover {
+        color: #ce1c8cdb;
+
+        svg {
+            g {
+                fill: #ce1c8cdb;
+            }
+        }
+    }
+`;

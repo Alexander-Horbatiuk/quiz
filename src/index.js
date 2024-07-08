@@ -10,10 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <I18nextProvider i18n={i18n}>
-        <React.StrictMode>
-            <Router>
-                <App />
-            </Router>
-        </React.StrictMode>
+        <Router>
+            <App />
+        </Router>
     </I18nextProvider>
 );

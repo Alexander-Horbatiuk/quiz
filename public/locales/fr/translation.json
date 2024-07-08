@@ -32,5 +32,7 @@
     "YoungAdult": "Jeune Adulte",
     "BadBoy": "Mauvais Garçon",
     "Billionaire": "Milliardaire",
-    "StepEmailTittle": "E-mail"
+    "StepEmailTittle": "E-mail",
+    "ErrorEmailText": "Email invalide",
+    "EmailPlaceholder": "Votre email"
 }

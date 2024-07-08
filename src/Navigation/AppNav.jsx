@@ -1,21 +1,21 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { GlobalStyle } from '../GlobalStyles';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Language } from '../components/Steps/Language';
 import { Age } from '../components/Steps/Age';
 import { Gender } from '../components/Steps/Gender';
 import { Books } from '../components/Steps/Books';
 import { Hobbies } from '../components/Steps/Hobbies';
-import { Loader } from '../components/Loader';
+import { Loader } from '../components/Steps/Loader';
 import { Email } from '../components/Steps/Email';
-import { GlobalStyle } from '../GlobalStyles';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Congratulations } from '../components/Steps/Congratulations';
 
-export const AppNav = ({ open }) => {
+export const AppNav = () => {
     const location = useLocation();
 
-    console.log(location.key, 'location');
     return (
-        <div>
+        <>
             <GlobalStyle />
             <TransitionGroup component={null}>
                 <CSSTransition
@@ -32,9 +32,13 @@ export const AppNav = ({ open }) => {
                         <Route path="/hobbies" element={<Hobbies />} />
                         <Route path="/loader" element={<Loader />} />
                         <Route path="/email" element={<Email />} />
+                        <Route
+                            path="/congratulations"
+                            element={<Congratulations />}
+                        />
                     </Routes>
                 </CSSTransition>
             </TransitionGroup>
-        </div>
+        </>
     );
 };

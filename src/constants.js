@@ -5,7 +5,8 @@ export const steps = [
     '/books',
     '/hobbies',
     '/loader',
-    '/email'
+    '/email',
+    '/congratulations'
 ];
 
 export const optionLanguages = [
@@ -23,7 +24,7 @@ export const optionsGender = (t) => {
     ];
 };
 
-export const optionsHobbies = (t) => {
+export const optionsHobbiesYoung = (t) => {
     return [
         { label: t('Werewolf'), value: t('Werewolf'), emoji: '🐺' },
         { label: t('Action'), value: t('Action'), emoji: '💃' },
@@ -35,12 +36,48 @@ export const optionsHobbies = (t) => {
     ];
 };
 
+export const optionsHobbiesMature = (t) => {
+    return [
+        { label: t('Werewolf'), value: t('Werewolf'), emoji: '🧟‍♀️' },
+        { label: t('Action'), value: t('Action'), emoji: '🧛‍♂️' },
+        { label: t('RoyalObsession'), value: t('RoyalObsession'), emoji: '🥷' },
+        { label: t('Romance'), value: t('Romance'), emoji: '🦸‍♂️' },
+        { label: t('YoungAdult'), value: t('YoungAdult'), emoji: '🤖' },
+        { label: t('BadBoy'), value: t('BadBoy'), emoji: '👾' },
+        { label: t('Billionaire'), value: t('Billionaire'), emoji: '👽' }
+    ];
+};
+
+export const optionsHobbiesElderly = (t) => {
+    return [
+        { label: t('Werewolf'), value: t('Werewolf'), emoji: '🏋' },
+        { label: t('Action'), value: t('Action'), emoji: '🧘‍♂️' },
+        { label: t('RoyalObsession'), value: t('RoyalObsession'), emoji: '🚵‍♀️' },
+        { label: t('Romance'), value: t('Romance'), emoji: '🚣‍♂️' },
+        { label: t('YoungAdult'), value: t('YoungAdult'), emoji: '🏇' },
+        { label: t('BadBoy'), value: t('BadBoy'), emoji: '🎮' },
+        { label: t('Billionaire'), value: t('Billionaire'), emoji: '🎳' }
+    ];
+};
+
+export const optionsHobbiesOld = (t) => {
+    return [
+        { label: t('Werewolf'), value: t('Werewolf'), emoji: '💀' },
+        { label: t('Action'), value: t('Action'), emoji: '☠️' },
+        { label: t('RoyalObsession'), value: t('RoyalObsession'), emoji: '👻' },
+        { label: t('Romance'), value: t('Romance'), emoji: '🤯' },
+        { label: t('YoungAdult'), value: t('YoungAdult'), emoji: '👨‍🦼' },
+        { label: t('BadBoy'), value: t('BadBoy'), emoji: '🏌' },
+        { label: t('Billionaire'), value: t('Billionaire'), emoji: '😴' }
+    ];
+};
+
 export const optionsAge = (years) => {
     return [
-        { label: `${'18-39 ' + years}`, value: `${'18-39 ' + years}` },
+        { label: `${'18-29 ' + years}`, value: `${'18-29 ' + years}` },
         { label: `${'30-39 ' + years}`, value: `${'30-39 ' + years}` },
         { label: `${'40-49 ' + years}`, value: `${'40-49 ' + years}` },
-        { label: '50+', value: '50+' }
+        { label: `50+`, value: `50+` }
     ];
 };
 

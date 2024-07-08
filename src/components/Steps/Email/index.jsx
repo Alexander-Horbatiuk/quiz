@@ -9,10 +9,12 @@ import {
     Form,
     InputEmail,
     PrivacyPoliticStyle,
-    LinkStyle
+    LinkStyle,
+    ErrorEmail,
+    InputWrapper
 } from '../../../GlobalStyles';
 
-export const Email = (borderColorValidate) => {
+export const Email = () => {
     const { nextStep, t } = useContext(AppContext);
     const [email, setEmail] = useState('');
     const [isValid, setIsValid] = useState();
@@ -50,18 +52,20 @@ export const Email = (borderColorValidate) => {
             <SubTitle>{t('StepGenderSubTitle')}</SubTitle>
 
             <Form onSubmit={onSubmitForm}>
-                <InputEmail
-                    value={email}
-                    onChange={handleInputChange}
-                    onBlur={() => setIsTouched(true)}
-                    borderColorValidate={
-                        isTouched && !isValid ? '#D0006E' : 'initial'
-                    }
-                    placeholder={'Your email'}
-                />
-                {!isValid && isTouched && (
-                    <p style={{ color: 'red' }}>Invalid email address</p>
-                )}
+                <InputWrapper>
+                    <InputEmail
+                        value={email}
+                        onChange={handleInputChange}
+                        onBlur={() => setIsTouched(true)}
+                        borderColorValidate={
+                            isTouched && !isValid ? '#D0006E' : 'initial'
+                        }
+                        placeholder={t('EmailPlaceholder')}
+                    />
+                    {!isValid && isTouched && (
+                        <ErrorEmail>{t('ErrorEmailText')}</ErrorEmail>
+                    )}
+                </InputWrapper>
 
                 <PrivacyPoliticStyle>
                     <Trans
@@ -82,6 +86,7 @@ export const Email = (borderColorValidate) => {
                         }}
                     />
                 </PrivacyPoliticStyle>
+
                 <ButtonToGo
                     type="submit"
                     disabled={!isValid}
