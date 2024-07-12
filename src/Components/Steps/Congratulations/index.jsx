@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
 
 import React, { useContext } from 'react';
-import { AppContext } from '../../../Context';
-import { ButtonToGo } from '../../Buttons/ButtonGoTo';
-import { Wrapper, Title, SubTitle } from '../../../GlobalStyles';
-import { SaveCSV } from '../../../GlobalStyles/buttons';
+import { AppContext } from '../../../Context/index.js';
+import { ButtonToGo } from '../../Buttons/ButtonToGo/index.jsx';
+import { Wrapper, Title, SubTitle } from '../../../GlobalStyles/index.js';
+import { SaveCSV } from '../../../GlobalStyles/buttons.js';
 
 export const Congratulations = () => {
     const { t, generateCSV } = useContext(AppContext);

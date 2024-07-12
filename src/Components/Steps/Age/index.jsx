@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from '../../../Context';
-import { Wrapper, Title } from '../../../GlobalStyles';
-import { ButtonVariable } from '../../Buttons/ButtonVariable';
+import { AppContext } from '../../../Context/index.js';
+import { ButtonVariable } from '../../Buttons/ButtonVariable/index.jsx';
+import { Wrapper, Title } from '../../../GlobalStyles/index.js';
 
 export const Age = () => {
     const { nextStep, ages, t } = useContext(AppContext);

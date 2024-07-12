@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from '../../../Context';
-import { Title, SubTitle, Wrapper } from '../../../GlobalStyles';
-import { ButtonToGo } from '../../Buttons/ButtonGoTo';
-import { ButtonVariable } from '../../Buttons/ButtonVariable';
+import { AppContext } from '../../../Context/index.js';
+import { Title, SubTitle, Wrapper } from '../../../GlobalStyles/index.js';
+import { ButtonToGo } from '../../Buttons/ButtonToGo/index.jsx';
+import { ButtonVariable } from '../../Buttons/ButtonVariable/index.jsx';
 
 export const Hobbies = () => {
     const {
@@ -13,7 +13,7 @@ export const Hobbies = () => {
         hobiesYoung,
         hobiesMature,
         hobbiesElderly,
-        hobbiesOld
+        hobbiesOld,
     } = useContext(AppContext);
     const [selectedValue, setSelectedValue] = useState([]);
 

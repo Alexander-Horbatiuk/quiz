@@ -1,5 +1,5 @@
 import React from 'react';
-import { BtnToGo } from '../../../GlobalStyles/buttons';
+import { BtnToGo } from '../../../GlobalStyles/buttons.js';
 
 export const ButtonToGo = ({ onClick, children, ...props }) => {
     return (

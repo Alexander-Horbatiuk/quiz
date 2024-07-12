@@ -198,21 +198,19 @@ export const RadioButtonGroup = ({
 }) => (
     <RadioButtonContainer maxWidth={maxWidth} flexDirection={flexDirection}>
         {options.map((option, index) => (
-            <>
-                <RadioButton
-                    flexDirection={flexDirection}
-                    maxWidth={maxWidth}
-                    sizeLabel={sizeLabel}
-                    btnRadius={btnRadius}
-                    key={index}
-                    label={option.label}
-                    emoji={option.emoji}
-                    sizeEnoji={sizeEnoji}
-                    checked={selectedValue.includes(option.value)}
-                    onChange={() => onChange(option.value)}
-                    hideRadio={hideRadio}
-                />
-            </>
+            <RadioButton
+                flexDirection={flexDirection}
+                maxWidth={maxWidth}
+                sizeLabel={sizeLabel}
+                btnRadius={btnRadius}
+                key={index}
+                label={option.label}
+                emoji={option.emoji}
+                sizeEnoji={sizeEnoji}
+                checked={selectedValue.includes(option.value)}
+                onChange={() => onChange(option.value)}
+                hideRadio={hideRadio}
+            />
         ))}
     </RadioButtonContainer>
 );

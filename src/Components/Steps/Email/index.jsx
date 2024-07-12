@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from '../../../Context';
 import { Trans } from 'react-i18next';
-import { ButtonToGo } from '../../Buttons/ButtonGoTo';
+import { AppContext } from '../../../Context/index.js';
+import { ButtonToGo } from '../../Buttons/ButtonToGo/index.jsx';
 import {
     Wrapper,
     Title,
@@ -11,8 +11,8 @@ import {
     PrivacyPoliticStyle,
     LinkStyle,
     ErrorEmail,
-    InputWrapper
-} from '../../../GlobalStyles';
+    InputWrapper,
+} from '../../../GlobalStyles/index.js';
 
 export const Email = () => {
     const { nextStep, t } = useContext(AppContext);
@@ -82,7 +82,7 @@ export const Email = () => {
                                     href="http://your-terms-link.com"
                                     key="terms-of-use"
                                 />
-                            )
+                            ),
                         }}
                     />
                 </PrivacyPoliticStyle>

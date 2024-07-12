@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { GlobalStyle } from '../GlobalStyles';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { Language } from '../Components/Steps/Language';
-import { Age } from '../Components/Steps/Age';
-import { Gender } from '../Components/Steps/Gender';
-import { Books } from '../Components/Steps/Books';
-import { Hobbies } from '../Components/Steps/Hobbies';
-import { Loader } from '../Components/Steps/Loader';
-import { Email } from '../Components/Steps/Email';
-import { Congratulations } from '../Components/Steps/Congratulations';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { GlobalStyle } from '../GlobalStyles/index.js';
+import { Language } from '../Components/Steps/Language/index.jsx';
+import { Age } from '../Components/Steps/Age/index.jsx';
+import { Gender } from '../Components/Steps/Gender/index.jsx';
+import { Books } from '../Components/Steps/Books/index.jsx';
+import { Hobbies } from '../Components/Steps/Hobbies/index.jsx';
+import { Loader } from '../Components/Steps/Loader/index.jsx';
+import { Email } from '../Components/Steps/Email/index.jsx';
+import { Congratulations } from '../Components/Steps/Congratulations/index.jsx';
 
 export const AppNav = () => {
     const location = useLocation();

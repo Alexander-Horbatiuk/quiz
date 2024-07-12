@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { AppContext } from '../../Context';
+import { AppContext } from '../../Context/index.js';
 
 export const ProgressBar = () => {
     const { currentStep } = useContext(AppContext);

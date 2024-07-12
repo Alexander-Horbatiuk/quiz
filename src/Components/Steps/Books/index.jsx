@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from '../../../Context';
-import { ButtonToGo } from '../../Buttons/ButtonGoTo';
-import { Wrapper, Title } from '../../../GlobalStyles';
-import { ButtonVariable } from '../../Buttons/ButtonVariable';
+import { AppContext } from '../../../Context/index.js';
+import { ButtonToGo } from '../../Buttons/ButtonToGo/index.jsx';
+import { Wrapper, Title } from '../../../GlobalStyles/index.js';
+import { ButtonVariable } from '../../Buttons/ButtonVariable/index.jsx';
 
 export const Books = () => {
     const { nextStep, books, t } = useContext(AppContext);

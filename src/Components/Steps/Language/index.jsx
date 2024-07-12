@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../../Context';
-import { ButtonVariable } from '../../Buttons/ButtonVariable';
-import { Wrapper, Title, SubTitle } from '../../../GlobalStyles';
+import { AppContext } from '../../../Context/index.js';
+import { ButtonVariable } from '../../Buttons/ButtonVariable/index.jsx';
+import { Wrapper, Title, SubTitle } from '../../../GlobalStyles/index.js';
 
 export const Language = () => {
     const { changeLanguage, nextStep, optionLanguages, t } =
         useContext(AppContext);
     const [selectedLanguages, setSelectedLanguages] = useState(
-        localStorage.getItem('single-select') || []
+        localStorage.getItem('language') || [],
     );
 
     const handleChange = (language) => {
@@ -15,11 +15,11 @@ export const Language = () => {
         changeLanguage(language); // Вызываем функцию смены языка
         nextStep();
 
-        localStorage.setItem('single-select', language);
+        localStorage.setItem('language', language);
     };
 
     useEffect(() => {
-        const storedValue = localStorage.getItem('single-select');
+        const storedValue = localStorage.getItem('language');
         if (storedValue) {
             setSelectedLanguages(storedValue);
         }

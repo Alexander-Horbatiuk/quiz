@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButtonGroup } from '../../../GlobalStyles/buttons';
+import { RadioButtonGroup } from '../../../GlobalStyles/buttons.js';
 
 export const ButtonVariable = ({
     onClick,

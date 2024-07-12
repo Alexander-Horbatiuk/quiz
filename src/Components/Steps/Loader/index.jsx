@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { AppContext } from '../../../Context';
 import styled from 'styled-components';
-import { Wrapper } from '../../../GlobalStyles';
+import { AppContext } from '../../../Context/index.js';
+import { Wrapper } from '../../../GlobalStyles/index.js';
 
 export const Loader = () => {
     const [percentage, setPercentage] = useState(0);
